@@ -60,7 +60,7 @@ In plus, am adaugat un feature suplimentar – analiza valorilor nutritionale di
 
 ##  Cum rulezi aplicația
 
-### 1. Clonează proiectul
+### 1. Cloneaza proiectul si ruleaza aplicatia
 ```bash
 git clone https://github.com/roberto10cmd/Price-Comparator-Accesa-Challenge.git
 cd Price-Comparator-Accesa-Challenge
