@@ -15,6 +15,27 @@ Aplicație web dezvoltată în Java & Spring Boot, care permite compararea preț
 
 ---
 
+## API Modules
+
+BasketController – gestioneaza cosurile de cumparaturi: creare, modificare, adaugare/stergere produse, optimizare preturi si analiza nutritionala.
+
+CsvReaderController – permite importul de produse, reduceri si informatii nutritionale din fisiere CSV.
+
+DiscountController – gestioneaza reducerile: adaugare, listare, stergere si extragerea celor mai bune oferte disponibile.
+
+PriceAlertController – gestioneaza alertele de pret: crearea alertelor si declansarea notificarilor in momentul in care un pret importat scade sub tinta definita de utilizator.
+
+PriceHistoryController – permite gestionarea istoricului de preturi: listare, creare, stergere si filtrare grafica dupa produs, magazin, categorie sau brand.
+
+ProductController – ofera operatii CRUD pentru produse si afiseaza istoricul de preturi asociat unui produs dat.
+
+StoreController – gestioneaza magazinele: adaugare, stergere, listare si afisarea produselor disponibile intr-un anumit magazin.
+
+UserController – gestioneaza utilizatorii aplicatiei: creare cont, listare utilizatori si stergere.
+
+---
+
+
 ## Tehnologii
 
 - Java 17
@@ -33,3 +54,10 @@ Aplicație web dezvoltată în Java & Spring Boot, care permite compararea preț
 ```bash
 git clone https://github.com/roberto10cmd/Price-Comparator-Accesa-Challenge.git
 cd Price-Comparator-Accesa-Challenge
+
+### 2. Ruleaza aplicatia
+```bash
+./mvnw spring-boot:run
+
+
+
