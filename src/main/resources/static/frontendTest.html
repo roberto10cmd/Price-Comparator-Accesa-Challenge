@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basket + Price Alerts</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+</head>
+<body>
+    <h1>Basket for User ID 1</h1>
+    <ul id="basket"></ul>
+
+    <h2> !! Live Price Alerts !!</h2>
+    <ul id="alerts"></ul>
+
+    <script>
+        const userId = 1;
+        let stompClient = null;
+
+        function connectWebSocket() {
+            const socket = new SockJS("http://localhost:8080/ws");
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, () => {
+                stompClient.subscribe(`/topic/alerts/${userId}`, (message) => {
+                    const li = document.createElement("li");
+                    li.textContent = message.body;
+                    document.getElementById("alerts").appendChild(li);
+                });
+            });
+        }
+
+        function loadBasket() {
+            fetch(`http://localhost:8080/api/baskets/${userId}`)
+            .then(res => res.json())
+            .then(basket => {
+                const list = document.getElementById("basket");
+                list.innerHTML = "";
+                basket.items.forEach(item => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `<b>${item.product.name}</b> x${item.quantity}<br>
+                        <input type='number' step='0.01' placeholder='Target price' id='target-${item.product.id}' />
+                        <button onclick='setAlert(${item.product.id})'>Set Price Alert</button>`;
+                    list.appendChild(li);
+                });
+        });
+}
+
+        function setAlert(productId) {
+            const target = document.getElementById(`target-${productId}`).value;
+            fetch("http://localhost:8080/api/alerts", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    userId: userId,
+                    productId: productId,
+                    targetPrice: parseFloat(target)
+                })
+            })
+            .then(res => {
+                if (res.ok) return res.text();
+                else throw new Error("Alert already exists or failed.");
+            })
+            .then(msg => alert(msg))
+            .catch(err => alert(err.message));
+        }
+
+        connectWebSocket();
+        loadBasket();
+    </script>
+</body>
+</html>
