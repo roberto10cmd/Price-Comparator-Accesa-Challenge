@@ -8,7 +8,7 @@ Am dezvoltat aceasta aplicatie cu scopul de a oferi o solutie practica, scalabil
 
 Mi-a facut placere sa lucrez la acest proiect, deoarece functionalitatile sale sunt direct aplicabile in viata reala: optimizarea cumparaturilor, gestionarea reducerilor si alertelor de pret sunt lucruri pe care oricine le experimenteaza ca utilizator.
 
-In plus, am adaugat un feature suplimentar – analiza valorilor nutritionale din cos – din convingerea ca un pret mic nu este suficient daca produsul nu este si sanatos. Astfel, aplicatia nu ofera doar cea mai ieftina varianta, ci si o perspectiva informata asupra calitatii nutritionale a produselor selectate.
+**In plus, am adaugat un feature suplimentar – analiza valorilor nutritionale din cos – din convingerea ca un pret mic nu este suficient daca produsul nu este si sanatos. Astfel, aplicatia nu ofera doar cea mai ieftina varianta, ci si o perspectiva informata asupra calitatii nutritionale a produselor selectate.**
 
 
 ---
