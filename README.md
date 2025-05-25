@@ -64,9 +64,6 @@ In plus, am adaugat un feature suplimentar – analiza valorilor nutritionale di
 ```bash
 git clone https://github.com/roberto10cmd/Price-Comparator-Accesa-Challenge.git
 cd Price-Comparator-Accesa-Challenge
-
-### 2. Ruleaza aplicatia
-```bash
 ./mvnw spring-boot:run
 
 
