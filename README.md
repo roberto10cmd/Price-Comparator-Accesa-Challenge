@@ -21,6 +21,7 @@ In plus, am adaugat un feature suplimentar – analiza valorilor nutritionale di
 -  Trimitere alerte de pret trimise userelui cand un produs scade sub limita setata de el
 -  Analiza nutritionala pentru produsele din coș: grăsimi, zahăr, proteine
 -  Recomandari per produs (cel mai bun magazin + detalii preț per unitate)
+-  Analiza valorilor nutritionale pe cosul de cumparaturi
 
 ---
 
